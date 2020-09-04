@@ -1,4 +1,5 @@
 # Simple Monocular Visual Odometry for ROS
+![](./intro.gif)
 - Mainly inspired by https://github.com/avisingh599/mono-vo
 - Dataset: KITTI 00 sequence
 - Extractor: FAST
