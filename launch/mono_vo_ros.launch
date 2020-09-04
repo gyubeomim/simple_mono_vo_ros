@@ -1,7 +1,7 @@
 <launch>
   <node pkg="mono_vo_ros" type="mono_vo_node" name="mono_vo_node"  output="screen"> 
     <param name="max_frame" value="4000" />
-    <param name="min_num_feat" value="4000" />
+    <param name="min_num_pts" value="4000" />
     <param name="fn_kitti" value="$(env HOME)/dataset/kitti/data_odometry" />
   </node>
 
