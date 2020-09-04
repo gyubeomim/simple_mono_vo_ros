@@ -80,7 +80,7 @@ class MonoVO {
   /// \param[out] p2 Features being tracked by the lucas-kanade optical flow.
   void FeatureTracking(cv::Mat img1, cv::Mat img2, std::vector<cv::Point2f> &p1, std::vector<cv::Point2f> &p2);
 
-  /// \brief Detection features.
+  /// \brief Detect features.
   /// \param[in] img Input image.
   /// \param[out] p Vector of feature points.
   void FeatureDetection(cv::Mat img, std::vector<cv::Point2f> &p);
