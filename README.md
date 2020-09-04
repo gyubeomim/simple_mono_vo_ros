@@ -7,8 +7,8 @@
 - Tested Environment: Ubuntu 18.04 LTS & ROS melodic.
 
 # Requirement
-- ROS kinetic (Ubuntu 16.04) or ROS melodic (Ubuntu 18.04) ![download](http://wiki.ros.org/ROS/Installation)
-- KITTI odometry dataset ![download](http://www.cvlibs.net/datasets/kitti/eval_odometry.php)
+- ROS kinetic (Ubuntu 16.04) or ROS melodic (Ubuntu 18.04) [download](http://wiki.ros.org/ROS/Installation)
+- KITTI odometry dataset [download](http://www.cvlibs.net/datasets/kitti/eval_odometry.php)
 
 # Instruction
 - Clone this repository.
