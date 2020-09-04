@@ -1,4 +1,4 @@
-# Simple Monocular Visual Odometry for ROS
+# Simple Monocular Visual Odometry method in ROS package
 ![](./intro.gif)
 - Mainly inspired by https://github.com/avisingh599/mono-vo
 - Dataset: KITTI 00 sequence
