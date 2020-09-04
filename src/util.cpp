@@ -8,6 +8,15 @@ std::string AddZeroPadding(const int value, const unsigned precision) {
   return oss.str();
 }
 
+bool IsRotMat(cv::Mat &R) {
+  cv::Mat Rt;
+  transpose(R, Rt);
+  cv::Mat shouldBeIdentity = Rt * R;
+  cv::Mat I = cv::Mat::eye(3,3, shouldBeIdentity.type());
+
+  return norm(I, shouldBeIdentity) < 1e-6;
+}
+
 cv::Vec3f RotMatToEuler(cv::Mat &R) {
   assert(IsRotMat(R));
   float sy = sqrt(R.at<double>(0,0) * R.at<double>(0,0) +  R.at<double>(1,0) * R.at<double>(1,0) );

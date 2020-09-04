@@ -16,6 +16,8 @@ namespace util {
 
 std::string AddZeroPadding(const int value, const unsigned precision);
 
+bool IsRotMat(cv::Mat &R);
+
 cv::Vec3f RotMatToEuler(cv::Mat &R);
 
 }// namespace util
