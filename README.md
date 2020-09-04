@@ -11,7 +11,7 @@
 - KITTI odometry dataset [download](http://www.cvlibs.net/datasets/kitti/eval_odometry.php)
 
 # Instruction
-- Clone this repository.
+- Clone this repository `git clone https://github.com/edward0im/simple_mono_vo_ros`.
 - Put this direcotory into your workspace such as `catkin_ws`.
 - Build the workspace using `catkin_make`.
 - Update ROS packages using `rospack profile`.
