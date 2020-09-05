@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
 
     // Get rotation and translation from vo.
     cv::Mat R = vo->GetRotation();
-    cv::Mat t_wc = vo->GetTranslation();
+    cv::Mat t = vo->GetTranslation();
     cv::Vec3f euler = util::RotMatToEuler(R);
     tf::Matrix3x3 _R(R.at<double>(0,0), R.at<double>(0,1), R.at<double>(0,2),
                      R.at<double>(1,0), R.at<double>(1,1), R.at<double>(1,2),
@@ -60,11 +60,11 @@ int main(int argc, char **argv) {
 
     std::cout << std::endl << "[+] " << util::AddZeroPadding(nframe,6) << std::endl;
     std::cout << "Rotation(euler):  " <<  std::setprecision(3) << "[" << euler.val[0] << ", " << euler.val[1] << ", " << euler.val[2] << "]" << std::endl;
-    std::cout << "Translate(x,y,z): " << round->format(t_wc.t()) << std::endl;
+    std::cout << "Translate(x,y,z): " << round->format(t.t()) << std::endl;
 
     transform.stamp_ = ros::Time::now();
     transform.setRotation(tf::Quaternion(quat[0], quat[1], quat[2], quat[3]));
-    transform.setOrigin(tf::Vector3(t_wc.at<double>(0), t_wc.at<double>(1), t_wc.at<double>(2)));
+    transform.setOrigin(tf::Vector3(t.at<double>(0), t.at<double>(1), t.at<double>(2)));
 
     // Braodcast the transform between /world and /camera.
     tf_broadcaster.sendTransform(transform);
@@ -81,9 +81,9 @@ int main(int argc, char **argv) {
     odom_quat.w = quat[3];
 
     // Set the position and rotation.
-    odom.pose.pose.position.x = t_wc.at<double>(0);
-    odom.pose.pose.position.y = t_wc.at<double>(1);
-    odom.pose.pose.position.z = t_wc.at<double>(2);
+    odom.pose.pose.position.x = t.at<double>(0);
+    odom.pose.pose.position.y = t.at<double>(1);
+    odom.pose.pose.position.z = t.at<double>(2);
     odom.pose.pose.orientation = odom_quat;
 
     // publish to /odom.
